@@ -1,0 +1,13 @@
+Origin: Cyber CTF
+Label: Cyber CTF
+Suite: stable
+Codename: stable
+Components: main
+Architectures: amd64
+Date: Fri, 02 Oct 2026 14:16:49 +0000
+MD5Sum:
+ 012632f59dec288ac662d222ee94a5cd 473 main/binary-amd64/Packages
+ 49b5f8f699e1c1fd5ac37667842f971d 373 main/binary-amd64/Packages.gz
+SHA256:
+ aa3bda47bdeaf4fd9a4bfcc012935f32ec4431d21d32318c9e0414df13d8bb34 473 main/binary-amd64/Packages
+ 0a20b89ceeacafd8198244ad37e83b602843c6e14c165045c60a3c39681ea5e1 373 main/binary-amd64/Packages.gz
