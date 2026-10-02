@@ -1,0 +1,33 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Origin: Cyber CTF
+Label: Cyber CTF
+Suite: stable
+Codename: stable
+Components: main
+Architectures: amd64
+Date: Fri, 02 Oct 2026 14:16:49 +0000
+MD5Sum:
+ 012632f59dec288ac662d222ee94a5cd 473 main/binary-amd64/Packages
+ 49b5f8f699e1c1fd5ac37667842f971d 373 main/binary-amd64/Packages.gz
+SHA256:
+ aa3bda47bdeaf4fd9a4bfcc012935f32ec4431d21d32318c9e0414df13d8bb34 473 main/binary-amd64/Packages
+ 0a20b89ceeacafd8198244ad37e83b602843c6e14c165045c60a3c39681ea5e1 373 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQJPBAEBCAA5FiEEtLZ3D1vtbz6RusZ+62FF9I5tfBwFAmq/vNEbFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMCwzAAoJEOthRfSObXwc/HsP/A9ZyMxz0UWy+6dPE6Sw
+TBltcFrgeb3M4ksyBqs9PrBezAp43t695j4VCm1jKxYlnWE/38eZk43XMNko3PCc
+xXP3wXRotAY8R6ZRHtNf+7gYl0XUEkEPWijdaA5DRLAQTqdnrVtL+XfHrkUsYNss
+B/KJdzgTPiA65dFAPCiGqy6vrHsRV07ejpypc26PPFHqNFgscGKxr1z8t4/NCYvV
+/A41lo6AnMFmtQyHnKgGYDYUCWqLkIPxP18qEIyrVJ1ZitxGpgVeJAH6cKZ4MOkF
+CVPG1IbSnZBLhW7S0vsRKrAh+T4+6XH9vLw8fE99npvTmFSyUqS/slnWZwy8uKzc
+TQ0l2LwcSOswr9jOWWcWoOhweUYpD58RPYkpAF5/2Ubli6cGM4scyr0as8HDxLB4
+D4J1A42vVRPp3/oPAiZ2xYNeU58tnvUsHKU5IhwiQAldlgphJbg6jpfMN2n54RGS
+IxFnQVdwHHe0XPNOKetUTaPqj3mjV8frVzcQLMnyihzKcW+71g6+68jd0SlSceKP
+61lCNktndy0tz/61iqQtsxCaTY+/YMWYX3W8Eb2p7Hr2jXIyw9gZEiA9yiKuKtIF
+KMPiVHJ7HUIYf14UhI2Rn+ITWYN83l6qZ4UN5C8MzRwtMazkw7BCpzblcyhN5o1p
+UsaVDsvrT8XUPdn2K36WVyVn
+=oaFY
+-----END PGP SIGNATURE-----
