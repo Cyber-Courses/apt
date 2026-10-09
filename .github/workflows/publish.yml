@@ -1,0 +1,78 @@
+name: Publish
+
+# Adds a launcher release's .deb to this apt repository, rebuilds the signed indexes and
+# pushes them to Pages. Run by Cyber-CTF-Desktop's distribute workflow when a release is
+# published, or by hand with a tag (`v0.3.7`). Only the newest package is kept in the pool.
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Launcher release tag, e.g. v0.3.7"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y dpkg-dev apt-utils
+
+      - name: Fetch the .deb
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+          version="${TAG#v}"
+          dir=pool/main/c/cyber-ctf
+          rm -rf pool/main/c/*
+          mkdir -p "$dir"
+          gh release download "$TAG" --repo Cyber-Courses/Cyber-CTF-Desktop --pattern "*_${version}_amd64.deb" --output "$dir/cyber-ctf_${version}_amd64.deb"
+          dpkg-deb --field "$dir/cyber-ctf_${version}_amd64.deb" Package Version
+
+      - name: Rebuild the indexes
+        run: |
+          set -euo pipefail
+          bin=dists/stable/main/binary-amd64
+          mkdir -p "$bin"
+          dpkg-scanpackages --multiversion pool > "$bin/Packages"
+          gzip -9 -k -f "$bin/Packages"
+          apt-ftparchive \
+            -o APT::FTPArchive::Release::Origin="Cyber CTF" \
+            -o APT::FTPArchive::Release::Label="Cyber CTF" \
+            -o APT::FTPArchive::Release::Suite=stable \
+            -o APT::FTPArchive::Release::Codename=stable \
+            -o APT::FTPArchive::Release::Components=main \
+            -o APT::FTPArchive::Release::Architectures=amd64 \
+            release dists/stable > dists/stable/Release
+
+      - name: Sign
+        env:
+          APT_GPG_PRIVATE_KEY: ${{ secrets.APT_GPG_PRIVATE_KEY }}
+          APT_GPG_KEY_ID: ${{ secrets.APT_GPG_KEY_ID }}
+        run: |
+          set -euo pipefail
+          echo "$APT_GPG_PRIVATE_KEY" | gpg --batch --import
+          gpg --batch --yes --default-key "$APT_GPG_KEY_ID" --clearsign -o dists/stable/InRelease dists/stable/Release
+          gpg --batch --yes --default-key "$APT_GPG_KEY_ID" -abs -o dists/stable/Release.gpg dists/stable/Release
+
+      - name: Commit
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A pool dists
+          git diff --cached --quiet && { echo "Already up to date"; exit 0; }
+          git commit -m "cyber-ctf ${TAG#v}"
+          git push
