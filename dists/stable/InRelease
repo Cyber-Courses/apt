@@ -1,33 +1,42 @@
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
+Hash: SHA512
 
-Origin: Cyber CTF
-Label: Cyber CTF
-Suite: stable
+Architectures: amd64
 Codename: stable
 Components: main
-Architectures: amd64
-Date: Fri, 02 Oct 2026 14:16:49 +0000
+Date: Fri, 09 Oct 2026 15:39:10 +0000
+Label: Cyber CTF
+Origin: Cyber CTF
+Suite: stable
 MD5Sum:
- 012632f59dec288ac662d222ee94a5cd 473 main/binary-amd64/Packages
- 49b5f8f699e1c1fd5ac37667842f971d 373 main/binary-amd64/Packages.gz
+ 39c6ff169f177beb79ec3eea694f87d4              142 Release
+ 88eb38ec79f69542cb29eb2d00ba5b3e              499 main/binary-amd64/Packages
+ 9199e086f9f163d4ca249c1bbce254ba              388 main/binary-amd64/Packages.gz
+SHA1:
+ 932ef04d0caacf03a44c78215d2edfba0e32a7a4              142 Release
+ 1e7b8c4352d29e191b25a3f0e0a68c685a3c2b52              499 main/binary-amd64/Packages
+ aff773cf31d8480f5b2180ed6de2c73d56f6b6c0              388 main/binary-amd64/Packages.gz
 SHA256:
- aa3bda47bdeaf4fd9a4bfcc012935f32ec4431d21d32318c9e0414df13d8bb34 473 main/binary-amd64/Packages
- 0a20b89ceeacafd8198244ad37e83b602843c6e14c165045c60a3c39681ea5e1 373 main/binary-amd64/Packages.gz
+ cfb6cfe62a0ef19ac7f7fe1e94abbd3967a35817f98b6da670a8934bd7a67d41              142 Release
+ 6c34a31979f21035fb3ccc6df73d6a8574bac3bcaabdc4bf09619fba46268809              499 main/binary-amd64/Packages
+ 341bb2175b204ac2246da4e11214923a505a979b8c315dc5749b711ac5a78829              388 main/binary-amd64/Packages.gz
+SHA512:
+ 1e358c5138f191354f2e9b2897da2c4c09f0200c0d212d29db21d015f8e97ac80598858b149415445acecc2a5ee7e02749b0426ec44c3ec56e1bbfc0281b8df9              142 Release
+ 5ec4042e4255366fb8c5a479b01a19ae0585f58dbf189437e723853f416d048f87d8f91880921532a4668224877f7b2d07b5b0870e3b682672b5eb9bf11585e2              499 main/binary-amd64/Packages
+ 948a439948a85369115cc9716f144c1f7228ef152d42a09bf245aa4e13c310cbad15a859ee49b33a50383ecb7ca30ed1f435d76a675384fa0943ffe667f83f45              388 main/binary-amd64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iQJPBAEBCAA5FiEEtLZ3D1vtbz6RusZ+62FF9I5tfBwFAmq/vNEbFIAAAAAABAAO
-bWFudTIsMi41KzEuMTIsMCwzAAoJEOthRfSObXwc/HsP/A9ZyMxz0UWy+6dPE6Sw
-TBltcFrgeb3M4ksyBqs9PrBezAp43t695j4VCm1jKxYlnWE/38eZk43XMNko3PCc
-xXP3wXRotAY8R6ZRHtNf+7gYl0XUEkEPWijdaA5DRLAQTqdnrVtL+XfHrkUsYNss
-B/KJdzgTPiA65dFAPCiGqy6vrHsRV07ejpypc26PPFHqNFgscGKxr1z8t4/NCYvV
-/A41lo6AnMFmtQyHnKgGYDYUCWqLkIPxP18qEIyrVJ1ZitxGpgVeJAH6cKZ4MOkF
-CVPG1IbSnZBLhW7S0vsRKrAh+T4+6XH9vLw8fE99npvTmFSyUqS/slnWZwy8uKzc
-TQ0l2LwcSOswr9jOWWcWoOhweUYpD58RPYkpAF5/2Ubli6cGM4scyr0as8HDxLB4
-D4J1A42vVRPp3/oPAiZ2xYNeU58tnvUsHKU5IhwiQAldlgphJbg6jpfMN2n54RGS
-IxFnQVdwHHe0XPNOKetUTaPqj3mjV8frVzcQLMnyihzKcW+71g6+68jd0SlSceKP
-61lCNktndy0tz/61iqQtsxCaTY+/YMWYX3W8Eb2p7Hr2jXIyw9gZEiA9yiKuKtIF
-KMPiVHJ7HUIYf14UhI2Rn+ITWYN83l6qZ4UN5C8MzRwtMazkw7BCpzblcyhN5o1p
-UsaVDsvrT8XUPdn2K36WVyVn
-=oaFY
+iQIzBAEBCgAdFiEEtLZ3D1vtbz6RusZ+62FF9I5tfBwFAmrJCp8ACgkQ62FF9I5t
+fBxVsg/+O09TCOO45bAmiWng2wHWx+W5Ssh/OSPunqp3Rny6eeapUO4s5AMRiXCf
+hpnrxPU5COrTlztyXQc08Ap27m12J9rhxlEFGtXFeHZWqbj2KnNiZk75+wqfoqeR
+mBNqDaedvXq3+dAtVmKRBSQPqlE28/xMHQSocYS4GNmp8fsDkMZ3zR9cheN/4ogD
+gxykSrj+AfrOqcITDmj/ROEKl/F7bziCv8SHHOHj4ofUSWUVPw5IBpMvl8wKTHjT
+GXpH7U0A7MtoVW2dnLzVyA6v1EU1wwSASzkqD2SsTMzX7/MrsBXy/+2TIs+rOgdc
+g+4yNfNkYeIvYIAzUuCnZiYLxDaxKuh04+Hzd3LHsIHsUovxtfuteMpm0P8ZqKgj
+saC2+1DK4NaNuxXs8e6bNiFlL1l8rC3PxkZv6meUmwqpLlnbCNgEgXQDNujD0jQi
+Z1/pLZnYMDjIghbEsTbYNIAL59d6UXdQ7qrhPGkD6BCQfnkFuE54vsOqQGafw81e
+mE9pJAyyGyK4ieqM9KxvJJJmXl7nJ+w3m53rXdWIhZwjG3+FxQRyPwrlidc6odSr
++3gsX95vJbVl9fjvTnGkHyoTZUP49iiOfUUrQodQL1WOyl1oehPY/Z44YeG8eOXU
+xqRWWQGJNe9ko9FoBjRYV8w1CEiO3uSFsaN7qQNTe4mfk9kA6l0=
+=nwB+
 -----END PGP SIGNATURE-----
