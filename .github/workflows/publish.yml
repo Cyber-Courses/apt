@@ -27,7 +27,7 @@ jobs:
       - name: Install tools
         run: sudo apt-get update && sudo apt-get install -y dpkg-dev apt-utils
 
-      - name: Fetch the .deb
+      - name: Fetch the .debs
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ inputs.tag }}
@@ -37,23 +37,30 @@ jobs:
           dir=pool/main/c/cyber-ctf
           rm -rf pool/main/c/*
           mkdir -p "$dir"
-          gh release download "$TAG" --repo Cyber-Courses/Cyber-CTF-Desktop --pattern "*_${version}_amd64.deb" --output "$dir/cyber-ctf_${version}_amd64.deb"
-          dpkg-deb --field "$dir/cyber-ctf_${version}_amd64.deb" Package Version
+          # arm64 joined in 0.3.8; an older tag only has amd64.
+          for arch in amd64 arm64; do
+            gh release download "$TAG" --repo Cyber-Courses/Cyber-CTF-Desktop --pattern "*_${version}_${arch}.deb" \
+              --output "$dir/cyber-ctf_${version}_${arch}.deb" || { [ "$arch" = amd64 ] && exit 1; echo "no $arch .deb"; continue; }
+            dpkg-deb --field "$dir/cyber-ctf_${version}_${arch}.deb" Package Version Architecture
+          done
 
       - name: Rebuild the indexes
         run: |
           set -euo pipefail
-          bin=dists/stable/main/binary-amd64
-          mkdir -p "$bin"
-          dpkg-scanpackages --multiversion pool > "$bin/Packages"
-          gzip -9 -k -f "$bin/Packages"
+          rm -rf dists/stable/main
+          for arch in amd64 arm64; do
+            bin=dists/stable/main/binary-$arch
+            mkdir -p "$bin"
+            dpkg-scanpackages --multiversion --arch "$arch" pool > "$bin/Packages"
+            gzip -9 -k -f "$bin/Packages"
+          done
           apt-ftparchive \
             -o APT::FTPArchive::Release::Origin="Cyber CTF" \
             -o APT::FTPArchive::Release::Label="Cyber CTF" \
             -o APT::FTPArchive::Release::Suite=stable \
             -o APT::FTPArchive::Release::Codename=stable \
             -o APT::FTPArchive::Release::Components=main \
-            -o APT::FTPArchive::Release::Architectures=amd64 \
+            -o APT::FTPArchive::Release::Architectures="amd64 arm64" \
             release dists/stable > dists/stable/Release
 
       - name: Sign
