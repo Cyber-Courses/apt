@@ -5,8 +5,8 @@
 </head><body>
 <h1>Cyber CTF &middot; apt repository</h1>
 <p>Install the Cyber CTF desktop launcher on Debian/Ubuntu (amd64):</p>
-<pre>curl -fsSL https://cyber-courses.github.io/apt/cyberctf-apt.asc | sudo gpg --dearmor -o /usr/share/keyrings/cyberctf.gpg
-echo "deb [signed-by=/usr/share/keyrings/cyberctf.gpg] https://cyber-courses.github.io/apt stable main" | sudo tee /etc/apt/sources.list.d/cyberctf.list
+<pre>sudo curl -fsSL https://cyber-courses.github.io/apt/cyberctf-apt.asc -o /usr/share/keyrings/cyberctf.asc
+echo "deb [signed-by=/usr/share/keyrings/cyberctf.asc] https://cyber-courses.github.io/apt stable main" | sudo tee /etc/apt/sources.list.d/cyberctf.list
 sudo apt update
 sudo apt install cyber-ctf</pre>
 <p>Source: <a href="https://github.com/Cyber-Courses/apt">github.com/Cyber-Courses/apt</a></p>
