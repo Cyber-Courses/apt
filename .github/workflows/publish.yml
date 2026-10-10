@@ -1,7 +1,7 @@
 name: Publish
 
 # Adds a launcher release's .deb to this apt repository, rebuilds the signed indexes and
-# pushes them to Pages. Run by Cyber-CTF-Desktop's distribute workflow when a release is
+# pushes them to Pages. Run by Cyber-CTF-Launcher's distribute workflow when a release is
 # published, or by hand with a tag (`v0.3.7`). Only the newest package is kept in the pool.
 
 on:
@@ -39,7 +39,7 @@ jobs:
           mkdir -p "$dir"
           # arm64 joined in 0.3.8; an older tag only has amd64.
           for arch in amd64 arm64; do
-            gh release download "$TAG" --repo Cyber-Courses/Cyber-CTF-Desktop --pattern "*_${version}_${arch}.deb" \
+            gh release download "$TAG" --repo Cyber-Courses/Cyber-CTF-Launcher --pattern "*_${version}_${arch}.deb" \
               --output "$dir/cyber-ctf_${version}_${arch}.deb" || { [ "$arch" = amd64 ] && exit 1; echo "no $arch .deb"; continue; }
             dpkg-deb --field "$dir/cyber-ctf_${version}_${arch}.deb" Package Version Architecture
           done
