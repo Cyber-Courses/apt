@@ -1,14 +1,14 @@
 Package: cyber-ctf
-Version: 1.5.2
+Version: 1.5.3
 Architecture: arm64
 Maintainer: Cyber-Courses
-Installed-Size: 54056
+Installed-Size: 54041
 Depends: pkexec | policykit-1, libwebkit2gtk-4.1-0, libgtk-3-0
-Filename: pool/main/c/cyber-ctf/cyber-ctf_1.5.2_arm64.deb
-Size: 19833348
-MD5sum: 468d102597bb59bc67bd793388cddc89
-SHA1: e0a03340ec983089fb9e34879c8c47ff7327f2d9
-SHA256: 01c68e347d6274a3d23df81979dbb8f8e8a7bd86e00bc3298c7b46b3061c906f
+Filename: pool/main/c/cyber-ctf/cyber-ctf_1.5.3_arm64.deb
+Size: 19833054
+MD5sum: 1ca3b7e2c26202d1ad0a8d15e84c7e86
+SHA1: af14a1f6de56efa5f933717d7fbe14e138d5f5e8
+SHA256: 8396101c7c7cf94808ccec9c028592050fe45f48338ca7252d9a02d5e20b7ef8
 Priority: optional
 Description: CyberCTF desktop launcher: runs Docker and VM labs locally
  (none)
